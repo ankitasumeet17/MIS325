@@ -1,16 +1,23 @@
 /*
-Name: Ankita Sumeet
-Assignment Number: Ex2
-Date: 2/2/21
-Section: 9:30 – 10:45
+Internship
 */
 
--- Q1:statement to retrieve customer first name, date shipped, and item id sorted by dates before 1/1/13 in descending order by date shipped
-select customer_first_name, shipped_date, item_id
-from customers_om C
-    join orders O 
-    on C.customer_id = O.customer_id 
-    join order_details OD
-    on O.order_id = OD.order_id
-where shipped_date < '01-Jan-13'
-order by shipped_date DESC;
+select business_process_type, 31 from workday.staffing_events
+where
+business_process_type in ('Hire’, ‘Contract Contingent Worker') and
+date_trunc ('year', effective_date) = '1/1/2022' and
+function_proposed = 'Engineering;
+
+select
+date_trunc ('month', effective_date) as hire_month,
+count (distinct employee_id) as hires
+from workday.staffing_events
+where
+business_process_type in ('Hire', 'Contract Contingent Worker') and
+date_trunc ('year', effective_date) = '1/1/2022
+group by hire_month;
+
+select *
+from workday. trended_worker_snapshot
+where worker like '%Wessel%'
+order by effective_date asc;
